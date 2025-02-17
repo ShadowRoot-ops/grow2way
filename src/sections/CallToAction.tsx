@@ -36,10 +36,10 @@ export default function CallToAction() {
                 >
                     {Array.from({ length: 10 }).map((_, i) => (
                         <div key={i} className="flex items-center gap-16">
-                            <span className="text-cyan-400 text-7xl">
+                            <span className="text-black text-7xl">
                                 &#10038;
                             </span>
-                            <span className="group-hover:text-cyan-400">
+                            <span className="group-hover:text-yellow-400">
                                 Grow Your Business with Us
                             </span>
                         </div>

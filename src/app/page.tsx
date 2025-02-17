@@ -7,6 +7,7 @@ import Integrations from "@/sections/Integrations";
 import Introduction from "@/sections/Introduction";
 import LogoTicker from "@/sections/LogoTicker";
 import Navbar from "@/sections/Navbar";
+import { CardHoverEffectDemo } from "@/components/CardHoverEffectDemo";
 
 export default function Home() {
     return (
@@ -19,6 +20,7 @@ export default function Home() {
             <Integrations />
             <Faqs />
             <CallToAction />
+            <CardHoverEffectDemo />
             <Footer />
         </>
     );

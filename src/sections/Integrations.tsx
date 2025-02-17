@@ -3,52 +3,56 @@ import Tag from "@/components/Tag";
 
 const integrations = [
     {
-        name: "SEO Optimization",
-        description: "Improve search engine rankings and organic traffic.",
+        name: "Mobile Van Advertising",
+        description: [
+            "Transform your brand into a moving bill board with high-impact visuals.",
+            "Ideal for local, city-wide, or state-wide campaigns.",
+            "Ensures maximum exposure across different locations.",
+        ],
     },
     {
-        name: "Social Media Marketing",
-        description: "Engage and grow your audience on social platforms.",
+        name: "Digital Marketing",
+        description: [
+            "Build a strong online presence with SEO, PPC, and social media campaigns",
+            "Engage your audience through Facebook, Instagram, LinkedIn, and Google Ads",
+            "Drive traffic, leads, and sales with content marketing and paid promotions",
+        ],
     },
     {
-        name: "Pay-Per-Click Advertising",
-        description: "Drive instant traffic with targeted paid ads.",
+        name: "Social Media Management",
+        description: [
+            "📲 Social Media Marketing – Engaging audiences through Facebook, Instagram, LinkedIn, and Twitter ads.",
+            "🔍 Google Ads & SEO – Increasing brand visibility and website traffic through digital strategies.",
+            "🎥 Video & Influencer Marketing – Leveraging content creation and collaborations with influencers.",
+            "📧 Email & WhatsApp Marketing – Targeted campaigns for personalized customer engagement.",
+        ],
     },
     {
-        name: "Content Marketing",
-        description: "Create valuable content to attract and retain customers.",
+        name: "Pamphlet & Flyer Distribution",
+        description: [
+            "Door-to-door, hand-to-hand, and newspaper insertions for targeted promotions.",
+            "Reach your audience directly with compelling messaging.",
+            "Cost-effective and efficient for local advertising campaigns.",
+        ],
     },
     {
-        name: "Email Marketing",
-        description: "Boost conversions with personalized email campaigns.",
+        name: "No Parking Board Advertising",
+        description: [
+            "Strategic placement in high-traffic areas for maximum visibility.",
+            "Acts as a constant reminder of your brand in prime locations.",
+            "Affordable yet highly effective outdoor advertising solution.",
+            "Permanent, low-cost brand placements at key locations for 24/7 exposure",
+        ],
     },
     {
-        name: "Influencer Marketing",
-        description: "Leverage influencers to expand your brand reach.",
-    },
-    {
-        name: "Video Production & Marketing",
-        description: "Create compelling video content for promotions.",
-    },
-    {
-        name: "Brand Strategy & Identity",
-        description: "Develop a strong brand presence and recognition.",
-    },
-    {
-        name: "Event Marketing",
-        description: "Promote and manage offline and online events.",
-    },
-    {
-        name: "Print Advertising",
-        description: "Traditional marketing through brochures and magazines.",
-    },
-    {
-        name: "Local Business Promotions",
-        description: "Target local customers with geo-specific strategies.",
-    },
-    {
-        name: "Radio & TV Advertising",
-        description: "Increase brand awareness through broadcast media.",
+        name: "Other Branding & Advertising Services",
+        description: [
+            "Hoardings & Billboard Advertising",
+            "LED Van Promotions",
+            "Event Sponsorship Marketing",
+            "Influencer & Video Marketing",
+            "Corporate Branding & Printing Solutions ",
+        ],
     },
 ];
 export type IntegrationsType = typeof integrations;
@@ -59,11 +63,11 @@ export default function Integrations() {
                 <div className="grid lg:grid-cols-2 items-center lg:gap-16">
                     <div>
                         <Tag>Online or Offline marketing</Tag>
-                        <h2 className="text-6xl font-medium mt-6">
-                            Our Digital Marketing{" "}
+                        <h2 className="text-6xl text-gray-700 font-medium mt-6">
+                            Our Core{" "}
                             <span className="text-blue-400">Services</span>
                         </h2>
-                        <p className="text-white/50 mt-4 text-lg">
+                        <p className="text-gray-900 mt-4 text-lg">
                             We provide a full range of online and offline
                             marketing solutions to help businesses grow,
                             increase visibility, and drive sales effectively.

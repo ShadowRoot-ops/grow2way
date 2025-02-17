@@ -7,48 +7,82 @@ import { twMerge } from "tailwind-merge";
 
 const faqs = [
     {
-        question: "How is Grow 2 Way different from others?",
-        answer: "Grow 2 Way stands out because we offer a personalized, hybrid approach combining both online and offline marketing to ensure maximum reach and engagement..",
+        question: "✔️ Integrated Marketing Expertise",
+        answer: "Combining digital, outdoor, and print advertising for comprehensive branding.",
     },
     {
-        question: "How long does it take to see results?",
-        answer: "It depends on the strategy, SEO can take 3-6 months to show results, PPC ads provide instant traffic, Social media & content marketing build engagement over time.",
+        question: "✔️ Innovative & Tailored Strategies ",
+        answer: "It depends on the strategy. SEO can take 3-6 months to show results, PPC ads provide instant traffic, and social media & content marketing build engagement over time.",
     },
     {
-        question: "How much does digital marketing cost?",
-        answer: "The cost varies based on the services needed. We offer flexible packages based on your goals, whether it's brand awareness, lead generation, or conversions.",
+        question: "✔️ High ROI Advertising",
+        answer: "Focused on results-driven campaigns that maximize brand awareness and customer engagement.",
     },
     {
-        question: "Can you handle both small and large businesses?",
-        answer: "Absolutely! Whether you're a startup or a large enterprise, we create tailored strategies to meet your needs.",
+        question: "✔️ End-to-End Support",
+        answer: "From campaign planning to execution, we handle everything for you.",
     },
     {
-        question: "How can I get started?",
-        answer: "Simply reach out to us! We’ll analyze your business, discuss your goals, and craft a marketing plan that works best for you",
+        question: "✔️ Trusted by Growing Businesses",
+        answer: "Proven success in helping brands reach new heights in visibility and profitability.",
+    },
+    {
+        question: "✔️ Innovative & Data-Driven Approach",
+        answer: "We use advanced marketing strategies backed by market research and data analytics.",
+    },
+    {
+        question: "✔️ Cost-Effective, High ROI Marketing ",
+        answer: "Our campaigns are designed to maximize impact while optimizing your investment.",
+    },
+    {
+        question: "✔️ End-to-End Marketing Solutions ",
+        answer: "From planning and execution to tracking and optimization, we handle every aspect of your campaign.",
+    },
+    {
+        question: "✔️ Experienced Team & Proven Results ",
+        answer: "With a team of marketing experts, designers, and strategists, we ensure exceptional results.",
+    },
+    {
+        question: "✔️ Multi-Channel Marketing Expertise ",
+        answer: "We integrate offline and online marketing for 360-degree brand growth.",
     },
 ];
 
 export default function Faqs() {
-    const [selectedIndex, setselectedIndex] = useState(0);
+    const [selectedIndex, setselectedIndex] = useState<null | number>(null);
+
     return (
         <section className="py-24" id="faqs">
             <div className="container">
                 <div className="flex justify-center">
                     <Tag>Faqs</Tag>
                 </div>
-                <h2 className="text-6xl font-medium mt-6 text-center max-w-xl mx-auto">
-                    Question? We&apos;ve got
-                    <span className="text-cyan-400"> answers</span>
+                <h2 className="text-6xl font-medium mt-6 text-center max-w-4xl mx-auto">
+                    Why Choose{" "}
+                    <span className="block">
+                        GROW 2 WAY{" "}
+                        <span className="ml-2 text-cyan-400">
+                            Marketing Solutions?
+                        </span>
+                    </span>
                 </h2>
-                <div className="mt-12 flex flex-col gap-6 max-w-xl mx-auto">
+
+                {/* Updated Layout: Two-Column Grid */}
+                <div className="mt-12 grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
                     {faqs.map((faq, faqIndex) => (
                         <div
                             key={faq.question}
-                            className="bg-neutral-900 rounded-2xl border border-white/10 p-6"
+                            className="bg-neutral-900 text-white rounded-2xl border border-white/10 p-6"
                         >
                             <div
-                                className="flex justify-between items-center"
-                                onClick={() => setselectedIndex(faqIndex)}
+                                className="flex justify-between items-center cursor-pointer"
+                                onClick={() =>
+                                    setselectedIndex(
+                                        selectedIndex === faqIndex
+                                            ? null
+                                            : faqIndex
+                                    )
+                                }
                             >
                                 <h3 className="font-medium">{faq.question}</h3>
                                 <svg
@@ -80,13 +114,13 @@ export default function Faqs() {
                                         }}
                                         animate={{
                                             height: "auto",
-                                            marginTop: 24,
+                                            marginTop: 16,
                                         }}
                                         exit={{
                                             height: 0,
                                             marginTop: 0,
                                         }}
-                                        className={twMerge("overflow-hidden")}
+                                        className="overflow-hidden"
                                     >
                                         <p className="text-white/50">
                                             {faq.answer}

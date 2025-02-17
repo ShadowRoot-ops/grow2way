@@ -26,7 +26,7 @@ const Footer: FC = () => {
         }
     }, [inView, entranceAnimation]);
     return (
-        <footer className="text-white/50">
+        <footer className="text-black">
             <div className="container">
                 <div className="py-24">
                     <div className="flex items-center gap-3">
@@ -40,7 +40,7 @@ const Footer: FC = () => {
                                 className="text-4xl md:text-7xl lg:text-8xl font-extralight"
                                 ref={scope}
                             >
-                                Enough Talk. Let&apos;s connect
+                                Let&apos;s Take Your Brand to the Next Level
                             </h2>
                             <Button
                                 variant="secondary"
@@ -81,12 +81,12 @@ const Footer: FC = () => {
                                 }
                                 aria-label="Contact us via email"
                             >
-                                gmail.com
+                                groww2way@gmail.com
                             </Button>
-                            {/* WhatsApp and LinkedIn Links */}
+                            {/* Social Media Links */}
                             <div className="flex gap-4 mt-8">
                                 <a
-                                    href="https://wa.me/your-whatsapp-number"
+                                    href="https://wa.me/message/MSEI24TW2QL6B1"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="Contact us via WhatsApp"
@@ -103,6 +103,26 @@ const Footer: FC = () => {
                                 >
                                     <Button variant="text" className="text-lg">
                                         LinkedIn
+                                    </Button>
+                                </a>
+                                <a
+                                    href="https://www.instagram.com/grow2waymarketingsolutions?igsh=MWk0ajNzaGZqanBkMQ=="
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Contact us via Instagram"
+                                >
+                                    <Button variant="text" className="text-lg">
+                                        Instagram
+                                    </Button>
+                                </a>
+                                <a
+                                    href="https://www.facebook.com/share/18diY2fPWD/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Contact us via Facebook"
+                                >
+                                    <Button variant="text" className="text-lg">
+                                        Facebook
                                     </Button>
                                 </a>
                             </div>

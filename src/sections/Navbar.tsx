@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { AnimatePresence, motion } from "framer-motion";
+import logo from "../assets/images/grow2way.png";
+import Image from "next/image";
 
 const navLinks = [
     { label: "Home", href: "#home" },
@@ -28,12 +30,19 @@ export default function Navbar() {
         <>
             <section className="py-4 lg:py-8 fixed w-full top-0 z-50">
                 <div className="container max-w-6xl">
-                    <div className="border border-white/15 rounded-[27px] md:rounded-full bg-gray-950/70 backdrop-blur">
+                    <div className="border border-black rounded-[27px] md:rounded-full bg-transparent backdrop-blur">
                         <div className="grid grid-cols-2 lg:grid-cols-3 p-2 px-4 md:pr-2 items-center">
                             <div className="h-9 md:h-auto w-auto ml-2">
-                                <h1 className="font-bold uppercase">
+                                {/* <h1 className="font-bold uppercase">
                                     Grow 2 WAY
-                                </h1>
+                                </h1> */}
+                                <Image
+                                    src={logo}
+                                    alt="Grow 2 WAY Logo"
+                                    width={500}
+                                    height={500}
+                                    className="h-10 w-auto"
+                                />
                             </div>
                             <div className="lg:flex justify-center items-center hidden">
                                 <nav className="flex gap-10 font-medium">
@@ -45,7 +54,7 @@ export default function Navbar() {
                                                 e.preventDefault();
                                                 handleLinkClick(link.href);
                                             }}
-                                            className="hover:text-gray-300 transition-colors"
+                                            className="hover:text-blue-300 transition-colors"
                                         >
                                             {link.label}
                                         </a>

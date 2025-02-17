@@ -2,25 +2,24 @@ import Tag from "@/components/Tag";
 import FeatureCard from "@/components/FeatureCard";
 
 const features = [
-    "Personalized Campaigns",
-    "Real-Time Reporting",
-    "Local to Global Reach",
-    "Sustainable Marketing",
-    "Creative Content Creation",
-    "Customer Retention Programs",
-    "Competitor Analysis",
+    "Logo Design & Brand Identity Creation",
+    "Stationery & Corporate Collateral",
+    "Brand Positioning & Strategy",
+    "Company Profile & Brochure Design",
 ];
 
 export default function Features() {
     return (
-        <section className="py-24" id="features">
+        <section className="py-24 bg-white" id="features">
             <div className="container">
                 <div className="flex justify-center">
-                    <Tag>Features</Tag>
+                    <Tag>What We Do</Tag>
                 </div>
                 <h2 className="text-6xl font-medium text-center mt-6 max-w-2xl mx-auto">
-                    Bridging the Gap
-                    <span className="text-cyan-400"> Building Your Brand.</span>
+                    We offer a 360-degree branding approach{" "}
+                    <span className="text-blue-600">
+                        to deliver measurable results
+                    </span>
                 </h2>
                 <div className="mt-12 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-7">
                     <FeatureCard
@@ -29,9 +28,9 @@ export default function Features() {
                         className="col-span-1 group"
                     >
                         <div className="aspect-video flex items-center justify-center">
-                            <p className="text-4xl font-extrabold text-white/20 text-center">
+                            <p className="text-4xl font-extrabold text-white text-center">
                                 Reaching the{" "}
-                                <span className="bg-gradient-to-r from-green-400 to-yellow-500 bg-clip-text text-transparent">
+                                <span className="bg-gradient-to-r from-teal-500 to-lime-500 bg-clip-text text-transparent">
                                     <span>right audience,</span>{" "}
                                     <video
                                         src="/gif/gif-incredible.mp4"
@@ -51,12 +50,12 @@ export default function Features() {
                         description="Utilize analytics to track, measure, and optimize your marketing efforts for maximum ROI and performance."
                     >
                         <div className="aspect-video flex items-center justify-center">
-                            <p className="text-4xl font-extrabold text-white/20 text-center">
+                            <p className="text-4xl font-extrabold text-white text-center">
                                 Optimizing campaigns for{" "}
-                                <span className="bg-gradient-to-r from-pink-500 to-orange-400 bg-clip-text text-transparent">
+                                <span className="bg-gradient-to-r from-rose-500 to-amber-500 bg-clip-text text-transparent">
                                     maximum ROI,{" "}
                                 </span>
-                                with data insights..
+                                with data insights.
                             </p>
                         </div>
                     </FeatureCard>
@@ -66,9 +65,9 @@ export default function Features() {
                         className="sm:col-start-1 md:col-start-3"
                     >
                         <div className="aspect-video flex items-center justify-center">
-                            <p className="text-4xl font-extrabold text-white/20 text-center">
+                            <p className="text-4xl font-extrabold text-white text-center">
                                 Crafting unique,{" "}
-                                <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
+                                <span className="bg-gradient-to-r from-sky-500 to-indigo-500 bg-clip-text text-transparent">
                                     engaging campaigns
                                 </span>{" "}
                                 that captivate.
@@ -80,12 +79,12 @@ export default function Features() {
                     {features.map((feature) => (
                         <div
                             key={feature}
-                            className="bg-neutral-900 border border-white/10 inline-flex px-3 md:px-5 py-1.5 md:py-2 rounded-2xl gap-3 items-center hover:scale-105 transition duration-500 group"
+                            className="bg-gray-100 border border-gray-300 inline-flex px-3 md:px-5 py-1.5 md:py-2 rounded-2xl gap-3 items-center hover:scale-105 transition duration-500 group"
                         >
-                            <span className="bg-cyan-400 text-neutral-950 size-5 rounded-full inline-flex items-center justify-center text-xl group-hover:rotate-45 transition duration-500">
+                            <span className="bg-blue-500 text-white size-5 rounded-full inline-flex items-center justify-center text-xl group-hover:rotate-45 transition duration-500">
                                 &#10038;
                             </span>
-                            <span className="font-medium md:text-lg">
+                            <span className="font-medium md:text-lg text-gray-900">
                                 {feature}
                             </span>
                         </div>

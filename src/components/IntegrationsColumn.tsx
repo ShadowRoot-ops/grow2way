@@ -7,7 +7,7 @@ import { Fragment } from "react";
 
 export default function IntegrationColumns(props: {
     integrations: IntegrationsType;
-    className?: string; // add className prop to allow customization of the component styles  // add className prop to allow customization of the component styles  // add className prop to allow customization of the component styles  // add className prop to allow customization of the component styles  // add className prop to allow customization of the component styles  // add className prop to allow customization of the component styles  // add className prop to allow customization of the component styles  // add className prop to allow customization of the component styles
+    className?: string;
     reverse?: boolean;
 }) {
     const { integrations, className, reverse } = props;
@@ -20,7 +20,7 @@ export default function IntegrationColumns(props: {
                 y: reverse ? 0 : "-50%",
             }}
             transition={{
-                duration: 25,
+                duration: 50,
                 repeat: Infinity,
                 ease: "linear",
             }}
@@ -33,12 +33,24 @@ export default function IntegrationColumns(props: {
                             key={integration.name}
                             className="bg-neutral-900 border border-white/15 rounded-3xl p-6 mt-8"
                         >
-                            <div className="text-xl text-center mt-5">
+                            <div className="text-xl text-white text-center mt-5">
                                 <h3>{integration.name}</h3>
                             </div>
-                            <p className="text-center text-white/50 mt-2">
-                                {integration.description}
-                            </p>
+
+                            {/* Render description as bullet points if it's an array */}
+                            {Array.isArray(integration.description) ? (
+                                <ul className="mt-3 list-disc list-inside text-green-300 text-sm text-left">
+                                    {integration.description.map(
+                                        (point, index) => (
+                                            <li key={index}>{point}</li>
+                                        )
+                                    )}
+                                </ul>
+                            ) : (
+                                <p className="text-center text-black mt-2">
+                                    {integration.description}
+                                </p>
+                            )}
                         </div>
                     ))}
                 </Fragment>

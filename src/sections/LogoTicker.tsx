@@ -12,7 +12,7 @@ export default function LogoTicker() {
     return (
         <section className="py-24 overflow-x-clip">
             <div className="container">
-                <h3 className="text-center text-white/50 text-xl">
+                <h3 className="text-center text-black text-xl">
                     Proudly Collaborated With
                 </h3>
             </div>
@@ -33,7 +33,7 @@ export default function LogoTicker() {
                             {names.map((item, index) => (
                                 <div
                                     key={index}
-                                    className="text-white text-lg whitespace-nowrap"
+                                    className="text-black text-lg whitespace-nowrap"
                                 >
                                     {item.name}
                                 </div>
