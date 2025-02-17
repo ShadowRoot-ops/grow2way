@@ -58,7 +58,7 @@ export default function Hero() {
             .then(
                 () => {
                     alert("Email sent successfully!");
-                    formRef.current.reset(); // Clear input after success
+                    // formRef.current.reset(); // Clear input after success
                 },
                 (error) => {
                     console.error("Email sending failed:", error.text);
