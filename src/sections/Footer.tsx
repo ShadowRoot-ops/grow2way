@@ -4,6 +4,12 @@ import { FC, useEffect } from "react";
 import Button from "@/components/Button";
 import useTextRevealAnimation from "@/components/useTextRevealAnimation";
 import { useInView } from "framer-motion";
+import {
+    FaWhatsapp,
+    FaLinkedin,
+    FaInstagram,
+    FaFacebook,
+} from "react-icons/fa";
 
 interface NavItem {
     href: string;
@@ -20,15 +26,17 @@ const navItems: NavItem[] = [
 const Footer: FC = () => {
     const { scope, entranceAnimation } = useTextRevealAnimation();
     const inView = useInView(scope);
+
     useEffect(() => {
         if (inView) {
             entranceAnimation();
         }
     }, [inView, entranceAnimation]);
+
     return (
         <footer className="text-black">
             <div className="container">
-                <div className="py-24">
+                <div className="py-10">
                     <div className="flex items-center gap-3">
                         <div className="size-3 rounded-full bg-lime-400 animate-bounce"></div>
                         <span className="uppercase">Contact Us</span>
@@ -47,7 +55,7 @@ const Footer: FC = () => {
                                 className="mt-8"
                                 iconAfter={
                                     <div className="size-6 overflow-hidden">
-                                        <div className="w-12 h-6 flex transition-transform duration-300 group-hover/button:-translate-x-1/2 ">
+                                        <div className="w-12 h-6 flex transition-transform duration-300 group-hover/button:-translate-x-1/2">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 fill="none"
@@ -84,46 +92,42 @@ const Footer: FC = () => {
                                 groww2way@gmail.com
                             </Button>
                             {/* Social Media Links */}
-                            <div className="flex gap-4 mt-8">
+                            <div className="flex gap-6 mt-8">
                                 <a
                                     href="https://wa.me/message/MSEI24TW2QL6B1"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="Contact us via WhatsApp"
+                                    className="text-2xl text-green-500 hover:scale-110 transition-transform"
                                 >
-                                    <Button variant="text" className="text-lg">
-                                        WhatsApp
-                                    </Button>
+                                    <FaWhatsapp />
                                 </a>
                                 <a
                                     href="https://www.linkedin.com/your-linkedin-profile"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="Contact us via LinkedIn"
+                                    className="text-2xl text-blue-600 hover:scale-110 transition-transform"
                                 >
-                                    <Button variant="text" className="text-lg">
-                                        LinkedIn
-                                    </Button>
+                                    <FaLinkedin />
                                 </a>
                                 <a
                                     href="https://www.instagram.com/grow2waymarketingsolutions?igsh=MWk0ajNzaGZqanBkMQ=="
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="Contact us via Instagram"
+                                    className="text-2xl text-pink-500 hover:scale-110 transition-transform"
                                 >
-                                    <Button variant="text" className="text-lg">
-                                        Instagram
-                                    </Button>
+                                    <FaInstagram />
                                 </a>
                                 <a
                                     href="https://www.facebook.com/share/18diY2fPWD/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="Contact us via Facebook"
+                                    className="text-2xl text-blue-700 hover:scale-110 transition-transform"
                                 >
-                                    <Button variant="text" className="text-lg">
-                                        Facebook
-                                    </Button>
+                                    <FaFacebook />
                                 </a>
                             </div>
                         </div>

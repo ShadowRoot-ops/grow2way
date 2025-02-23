@@ -47,13 +47,13 @@ export default function Introduction() {
                                 <span
                                     key={index}
                                     className={twMerge(
-                                        "transition duration-500 text-white",
+                                        "transition duration-500 text-black",
                                         index < currentWord && "text-blue-600"
                                     )}
                                 >{`${word} `}</span>
                             ))}
                         </span>
-                        <span className="text-cyan-400 block">
+                        <span className="text-cyan-700 block">
                             Let&apos;s Grow Your Brand Together
                         </span>
                     </div>

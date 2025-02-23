@@ -12,12 +12,11 @@ const config: Config = {
             center: true,
             padding: {
                 DEFAULT: "1rem",
+                sm: "1rem",
                 md: "2rem",
                 lg: "4rem",
-                sm: "1rem",
             },
         },
-
         fontFamily: {
             sans: ["var(--font-inter)", "sans-serif"],
         },
@@ -26,7 +25,19 @@ const config: Config = {
             md: "768px",
             lg: "1200px",
         },
+        extend: {
+            animation: {
+                scroll: "scroll 30s linear infinite",
+            },
+            keyframes: {
+                scroll: {
+                    from: { transform: "translateY(0)" },
+                    to: { transform: "translateY(-50%)" },
+                },
+            },
+        },
     },
     plugins: [],
 };
+
 export default config;

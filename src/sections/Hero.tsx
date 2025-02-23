@@ -1,11 +1,10 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import Button from "@/components/Button";
 import Pointer from "@/components/Pointer";
 import { motion, useAnimate } from "framer-motion";
-import { useEffect } from "react";
 import cusrsorYouImage from "@/assets/images/cursor-you.svg";
 
 export default function Hero() {
@@ -58,7 +57,6 @@ export default function Hero() {
             .then(
                 () => {
                     alert("Email sent successfully!");
-                    // formRef.current.reset(); // Clear input after success
                 },
                 (error) => {
                     console.error("Email sending failed:", error.text);
@@ -69,7 +67,7 @@ export default function Hero() {
 
     return (
         <section
-            className="py-24"
+            className="py-24 bg-blue-950 text-white"
             style={{
                 cursor: `url(${cusrsorYouImage.src}), auto `,
             }}
@@ -99,7 +97,7 @@ export default function Hero() {
                 <h1 className="text-6xl md:text-7xl lg:text-8xl font-medium text-center mt-6">
                     Towards Your Brand Success..!
                 </h1>
-                <p className="text-center text-xl text-blue-500 mt-8 max-w-2xl mx-auto">
+                <p className="text-center text-xl text-blue-300 mt-8 max-w-2xl mx-auto">
                     At GROW2WAY Marketing Solutions, we turn brands into market
                     leaders with innovative advertising and strategic marketing.
                     From digital to traditional channels, we offer mobile van
@@ -110,14 +108,14 @@ export default function Hero() {
                 <form
                     ref={formRef}
                     onSubmit={sendEmail}
-                    className="flex border border-white/15 rounded-full p-2 mt-8 max-w-lg mx-auto"
+                    className="flex border border-white/15 rounded-full p-2 mt-8 max-w-lg mx-auto bg-white/10"
                 >
                     <input
                         type="email"
                         name="user_email"
                         placeholder="Enter your Email"
                         required
-                        className="bg-transparent border border-black px-4 md:flex-1 w-full"
+                        className="bg-transparent border-none px-4 text-white placeholder-white md:flex-1 w-full focus:outline-none"
                     />
                     <Button type="submit" variant="secondary">
                         Contact Us

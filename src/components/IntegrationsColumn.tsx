@@ -3,7 +3,7 @@
 import { type IntegrationsType } from "@/sections/Integrations";
 import { twMerge } from "tailwind-merge";
 import { motion } from "framer-motion";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 
 export default function IntegrationColumns(props: {
     integrations: IntegrationsType;
@@ -11,33 +11,51 @@ export default function IntegrationColumns(props: {
     reverse?: boolean;
 }) {
     const { integrations, className, reverse } = props;
-    return (
-        <motion.div
-            initial={{
-                y: reverse ? "-50%" : 0,
-            }}
-            animate={{
-                y: reverse ? 0 : "-50%",
-            }}
-            transition={{
-                duration: 50,
+    const [isPaused, setIsPaused] = useState(false);
+
+    // Animation Variants
+    const variants = {
+        scrolling: {
+            y: reverse ? ["-50%", "0%"] : ["0%", "-50%"],
+            transition: {
+                duration: 50, // Normal speed
                 repeat: Infinity,
                 ease: "linear",
-            }}
+            },
+        },
+        paused: {
+            y: reverse ? ["-50%", "-48%"] : ["0%", "-2%"], // Minor movement to avoid an abrupt stop
+            transition: {
+                duration: 3, // Slow down instead of stopping instantly
+                ease: "easeInOut",
+            },
+        },
+    };
+
+    return (
+        <motion.div
+            animate={isPaused ? "paused" : "scrolling"}
+            variants={variants}
             className={twMerge("flex flex-col gap-4 pb-4", className)}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
         >
             {Array.from({ length: 2 }).map((_, i) => (
                 <Fragment key={i}>
                     {integrations.map((integration) => (
-                        <div
+                        <motion.div
                             key={integration.name}
+                            whileHover={{ scale: 1.05 }}
+                            transition={{
+                                type: "tween",
+                                duration: 0.3,
+                                ease: "easeInOut",
+                            }}
                             className="bg-neutral-900 border border-white/15 rounded-3xl p-6 mt-8"
                         >
                             <div className="text-xl text-white text-center mt-5">
                                 <h3>{integration.name}</h3>
                             </div>
-
-                            {/* Render description as bullet points if it's an array */}
                             {Array.isArray(integration.description) ? (
                                 <ul className="mt-3 list-disc list-inside text-green-300 text-sm text-left">
                                     {integration.description.map(
@@ -51,7 +69,7 @@ export default function IntegrationColumns(props: {
                                     {integration.description}
                                 </p>
                             )}
-                        </div>
+                        </motion.div>
                     ))}
                 </Fragment>
             ))}

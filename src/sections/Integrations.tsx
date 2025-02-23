@@ -1,4 +1,6 @@
-import IntegrationColumns from "@/components/IntegrationsColumn";
+"use client";
+
+import IntegrationColumns from "./IntegrationsColumn";
 import Tag from "@/components/Tag";
 
 const integrations = [
@@ -55,15 +57,17 @@ const integrations = [
         ],
     },
 ];
+
 export type IntegrationsType = typeof integrations;
+
 export default function Integrations() {
     return (
         <section className="py-24 overflow-hidden" id="integrations">
-            <div className="container">
+            <div className="container mx-auto px-4">
                 <div className="grid lg:grid-cols-2 items-center lg:gap-16">
                     <div>
                         <Tag>Online or Offline marketing</Tag>
-                        <h2 className="text-6xl text-gray-700 font-medium mt-6">
+                        <h2 className="text-4xl md:text-6xl text-gray-700 font-medium mt-6">
                             Our Core{" "}
                             <span className="text-blue-400">Services</span>
                         </h2>
